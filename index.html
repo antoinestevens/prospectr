@@ -169,6 +169,9 @@ $(function() {
   $('.container-fluid').append(
     '<div id="bottom-navbar" class="navbar-fixed-bottom navbar">\
       <div class="navbar-inner">\
+      <div class="pull-left">\
+          <span class="navbar-text"><p>Author: Antoine Stevens - Content produced with <a href="https://github.com/yihui/knitr">knitr</a> and styled with <a href="https://github.com/jimhester/knitrBootstrap">knitrBootstrap</a></p></span>\
+          </div>\
         <div class="pull-right">\
           <span class="navbar-text">Toggle</span>\
           <div class="btn-group dropup" data-toggle="button-checkbox">\
@@ -206,7 +209,7 @@ $(function() {
   /* add footer */
   $('body').wrapInner('<div id="wrap" />');
   $('#wrap').append('<div id="push" />');
-  var p = $('p:contains("Author:")');
+  var p = $('p:contains("sddd:")');
   var last_p = p.filter(':last');
   p.detach();
   last_p.addClass('muted').attr('id','credit');
@@ -903,8 +906,6 @@ abline(v = as.numeric(colnames(NIRsoil$spc))[ho$bands], lty = 2)
 <li>Nisha Shetty, Asmund Rinnan, Rene Gislum,   (2012) Selection of representative calibration sample sets for near-infrared reflectance spectroscopy to predict nitrogen concentration in grasses.  <em>Chemometrics and Intelligent Laboratory Systems</em>  <strong>111</strong>  (1)   59-65  <a href="http://dx.doi.org/10.1016/j.chemolab.2011.11.013">10.1016/j.chemolab.2011.11.013</a></li>
 <li>R. Snee,   (1977) Validation of regression models: methods and examples.  <em>Technometrics</em>  <strong>19</strong>  (4)   415-428  <a href="http://amstat.tandfonline.com/doi/abs/10.1080/00401706.1977.10489581">http://amstat.tandfonline.com/doi/abs/10.1080/00401706.1977.10489581</a></li>
 </ul>
-
-<p>Author: Antoine Stevens</p>
 
 </body>
 
