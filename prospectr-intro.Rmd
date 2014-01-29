@@ -166,7 +166,7 @@ where $k$ is the gap size. Again, this can be easily achieved in R using the `la
 gd1 <- t(diff(t(NIRsoil$spc), differences = 1, lag = 10)) 
 ```
 
-For more flexibility and control over the degree of smoothing, one could however use the Savitzky-Golay (`savitzkyGolay`) and Gap-segment derivative (`gapDer`) algorithms. The Gap-segment algorithms performs first a smoothing under a given segment size, followed by . Here is an exemple of the use of the `gapDer` function.
+For more flexibility and control over the degree of smoothing, one could however use the Savitzky-Golay (`savitzkyGolay`) and Gap-segment derivative (`gapDer`) algorithms. The Gap-segment algorithms performs first a smoothing under a given segment size, followed by a derivative of a given order under a given gap size. Here is an exemple of the use of the `gapDer` function.
 
 
 ```{r gapseg,fig.cap="Effect of 1st-order gap-segment derivative ", fig.height=6,fig.width=10, tidy=TRUE, dpi = 300,out.height="528px",out.width="880px"}

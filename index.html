@@ -1219,7 +1219,7 @@ legend(&quot;topleft&quot;, legend = c(&quot;1st der&quot;, &quot;2nd der&quot;)
 gd1 &lt;- t(diff(t(NIRsoil$spc), differences = 1, lag = 10))
 </code></pre>
 
-<p>For more flexibility and control over the degree of smoothing, one could however use the Savitzky-Golay (<code>savitzkyGolay</code>) and Gap-segment derivative (<code>gapDer</code>) algorithms. The Gap-segment algorithms performs first a smoothing under a given segment size, followed by . Here is an exemple of the use of the <code>gapDer</code> function.</p>
+<p>For more flexibility and control over the degree of smoothing, one could however use the Savitzky-Golay (<code>savitzkyGolay</code>) and Gap-segment derivative (<code>gapDer</code>) algorithms. The Gap-segment algorithms performs first a smoothing under a given segment size, followed by a derivative of a given order under a given gap size. Here is an exemple of the use of the <code>gapDer</code> function.</p>
 
 <pre><code class="r"># m = order of the derivative w = window size ( = {2 * gap size} + 1) s =
 # segment size first derivative with a gap of 10 bands
