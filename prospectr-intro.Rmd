@@ -10,7 +10,7 @@ newbib()
 bib <- read.bibtex("prospectr-intro.bib")
 ```
 
-Visible and Near Infrared diffuse reflectance (vis--NIR) spectroscopy is a high--troughput, non--destructive and cheap sensing method that has a range of applications in agricultural, medical, food and environmental science. A number of R packages of interest for the spectroscopist is already available for processing and analysis of spectroscopic data (Table 1). The CRAN task views [Multivariate Statistics](http://cran.r-project.org/web/views/Multivariate.html), [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html), [Chemometrics and Computational Physics](http://cran.r-project.org/web/views/ChemPhys.html). The interested reader can also have a look at the special issue ["Spectroscopy and Chemometrics in R"](http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf) of the Journal of Statistical Software `r citep(bib["mullen2007"])`.
+Visible and Near Infrared diffuse reflectance (vis-NIR) spectroscopy is a high-troughput, non-destructive and cheap sensing method that has a range of applications in agricultural, medical, food and environmental science. A number of R packages of interest for the spectroscopist is already available for processing and analysis of spectroscopic data (Table 1). The CRAN task views [Multivariate Statistics](http://cran.r-project.org/web/views/Multivariate.html), [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html), [Chemometrics and Computational Physics](http://cran.r-project.org/web/views/ChemPhys.html). The interested reader can also have a look at the special issue ["Spectroscopy and Chemometrics in R"](http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf) of the Journal of Statistical Software `r citep(bib["mullen2007"])`.
 
 Package Name           | Description                              
 ---------------------- | -----------------------------------------------------------
@@ -28,11 +28,11 @@ Package Name           | Description
 Table 1: Non-exhaustive list of R package useful for vis--NIR spectroscopic analysis
 
 
-The prospect package gathers algorithms commonly--used in spectroscopy for pre--treating spectra and select calibration samples. Some of the algorithms are already available in other package, like the Savitzky--Golay algorithm `r citep(bib["savitzky1964"])` but our functions works indifferently on `vector`, `data.frame` or  `matrix` input and are optimized for speed using the [Rcpp](http://cran.r-project.org/web/packages/Rcpp/index.html) and [RcppArmadillo](http://cran.r-project.org/web/packages/RcppArmadillo/index.html) packages. 
+The prospect package gathers algorithms commonly-used in spectroscopy for pre-treating spectra and select calibration samples. Some of the algorithms are already available in other package, like the Savitzky-Golay algorithm `r citep(bib["savitzky1964"])` but our functions works indifferently on `vector`, `data.frame` or  `matrix` input and are optimized for speed using the [Rcpp](http://cran.r-project.org/web/packages/Rcpp/index.html) and [RcppArmadillo](http://cran.r-project.org/web/packages/RcppArmadillo/index.html) packages. 
 
 # Signal Processing
 
-The aim of signal pre--treatment is to improve data quality before modeling and remove physical information from the spectra. Applying a pre--treatment can increase the repeatability/reproducibility of the method, model robustness and accuracy, although there are no guarantees this will actually work...The pre--processing functions that are currently available in the package are listed in Table 2.
+The aim of signal pre-treatment is to improve data quality before modeling and remove physical information from the spectra. Applying a pre-treatment can increase the repeatability/reproducibility of the method, model robustness and accuracy, although there are no guarantees this will actually work...The pre-processing functions that are currently available in the package are listed in Table 2.
 
 Function Name           | Description                                    
 ----------------------- | ---------------------------------------------- 
@@ -48,9 +48,9 @@ Function Name           | Description
 `blockScale`            | block scaling
 `blockNorm`             | sum of squares block weighting
 
-Table 2: List of pre--processing functions
+Table 2: List of pre-processing functions
 
-We show below how they can be used, using the NIRsoil dataset included in the package `r citep(bib["fernandez2008"])`. Observations should be arranged row--wise.
+We show below how they can be used, using the NIRsoil dataset included in the package `r citep(bib["fernandez2008"])`. Observations should be arranged row-wise.
 
 
 ```{r NIRsoil, tidy=TRUE, message=FALSE}
@@ -69,7 +69,7 @@ Noise represents random fluctuations around the signal that can originate from t
   
 ### Moving average or runnnig mean
 
-A moving average filter is a column--wise operation which average contiguous wavelengths within a given window size. 
+A moving average filter is a column-wise operation which average contiguous wavelengths within a given window size. 
 
 ```{r movin, fig.cap="Effect of a moving average with window size of 10 bands on a raw spectrum",fig.height=6,fig.width=10, tidy=TRUE,dpi=300,out.height="528px",out.width="880px"}
 noisy <- NIRsoil$spc + rnorm(length(NIRsoil$spc),0,0.001) # adding some noise
@@ -105,7 +105,7 @@ Savitzky-Golay filtering `r citep(bib["savitzky1964"])` is a very common preproc
 
 $$ x_j\ast = \frac{1}{N}\sum_{h=-k}^{k}{c_hx_{j+h}}$$
 
-where $x_j\ast$ is the new value, $N$ is a normalizing coefficient, $k$ is the number of neighbour values at each side of $j$ and $c_h$ are pre--computed coefficients, that depends on the chosen polynomial order and degree (smoothing, first and second derivative).
+where $x_j\ast$ is the new value, $N$ is a normalizing coefficient, $k$ is the number of neighbour values at each side of $j$ and $c_h$ are pre-computed coefficients, that depends on the chosen polynomial order and degree (smoothing, first and second derivative).
 
 ```{r savits, tidy=TRUE}
 # p = polynomial order
@@ -186,7 +186,7 @@ Undesired spectral variations due to light _scatter_ effects and variations in e
 
 ### Standard Normal Variate (SNV)
 
-_Standard Normal Variate_ (SNV) is another simple way for normalizing spectra that intends to correct for light _scatter_. It operates row--wise:
+_Standard Normal Variate_ (SNV) is another simple way for normalizing spectra that intends to correct for light _scatter_. It operates row-wise:
 
 $$ SNV_i = \frac{x_i - \bar{x_i}}{s_i}$$
 
@@ -194,11 +194,11 @@ $$ SNV_i = \frac{x_i - \bar{x_i}}{s_i}$$
 snv <- standardNormalVariate(X=NIRsoil$spc)
 ```
 
-According to Fearn `r citep(bib["fearn2008"])`, it is better to perform SNV transformation after filtering (by e.g. Savitzky--Golay) than the reverse
+According to Fearn `r citep(bib["fearn2008"])`, it is better to perform SNV transformation after filtering (by e.g. Savitzky-Golay) than the reverse
 
 ### SNV-Detrend
 
-The _SNV-Detrend_ `r citep(bib["barnes1989"])` further accounts for wavelength-dependent scattering effects (variation in curvilinearity between the spectra). After a _SNV_ transformation, a 2$^{nd}$--order polynomial is fit to the spectrum and subtracted from it.
+The _SNV-Detrend_ `r citep(bib["barnes1989"])` further accounts for wavelength-dependent scattering effects (variation in curvilinearity between the spectra). After a _SNV_ transformation, a 2$^{nd}$-order polynomial is fit to the spectrum and subtracted from it.
 
 ```{r detrend, fig.cap="Effect of SNV-Detrend on raw spectra",fig.height=6,fig.width=10, tidy=TRUE, dpi = 300,out.height="528px",out.width="880px"}
 # X = input spectral matrix
@@ -232,7 +232,7 @@ bs <- blockScale(X=NIRsoil$spc,type="hard")$Xscaled
 sum(apply(bs,2,var)) # this works!
 ```
 
-The problem with _block scaling_ is that it down--scale all the block variables to the same variance. Since sometimes this is not advised, one can alternatively use _sum of squares block weighting_ . The spectral matrix is multiplied by a factor to achieve a pre--determined sum of square: 
+The problem with _block scaling_ is that it down-scale all the block variables to the same variance. Since sometimes this is not advised, one can alternatively use _sum of squares block weighting_ . The spectral matrix is multiplied by a factor to achieve a pre-determined sum of square: 
 
 ```{r bnorm, tidy=TRUE}
 # X = spectral matrix
@@ -288,7 +288,7 @@ To sample a subset of $n$  samples $X_{tr} = \left \{ {x_{tr}}_{j} \right \}_{j=
   
 3. Repeat the step 2 n-3 times in order to select the remaining samples (${x_{tr}}_4,..., {x_{tr}}_n$).   
 
-The Kennard--Stone algorithm allows to create a calibration set that has a flat distribution over the spectral space. The metric used to compute the distance between points can be either the Euclidean distance or the Mahalanobis distance. 
+The Kennard-Stone algorithm allows to create a calibration set that has a flat distribution over the spectral space. The metric used to compute the distance between points can be either the Euclidean distance or the Mahalanobis distance. 
 Let's see some examples...
 
 
@@ -316,7 +316,7 @@ points(ken_mahal$pc[ken_mahal$model,1],ken_mahal$pc[ken_mahal$model,2],pch=19,co
 
 ### DUPLEX (`duplex`)
 
-The Kennard--Stone algorithm selects _calibration_ samples. Often, we need also to select a _validation_ subset. The DUPLEX algorithm `r citep(bib["snee1977"])` is a modification of the Kennard-Stone which allows to select a _validation_ set that have similar properties to the _calibration_set. DUPLEX, similarly to Kennard--Stone, begins by selecting pairs of points that are the farthest apart from each other, and then assigns points alternatively to the _calibration_ and _validation_ sets.
+The Kennard-Stone algorithm selects _calibration_ samples. Often, we need also to select a _validation_ subset. The DUPLEX algorithm `r citep(bib["snee1977"])` is a modification of the Kennard-Stone which allows to select a _validation_ set that have similar properties to the _calibration_set. DUPLEX, similarly to Kennard-Stone, begins by selecting pairs of points that are the farthest apart from each other, and then assigns points alternatively to the _calibration_ and _validation_ sets.
 
 ```{r duplex, fig.cap="Selection of 15 calibration and validation samples with the DUPLEX algorithm", tidy=TRUE, dpi = 300, out.height='680px', out.width='680px',fig.align='center'}
 dup <- duplex(X=X,k=15) # k is the number of selected samples

@@ -948,11 +948,13 @@ img.mfp-img {
 </head>
 
 <body>
+
+<img src="logo_prospectr_color.png" width="880px" height="225px">
 <h1>An Introduction to the <code>prospectr</code> package</h1>
 
 <p><em>Antoine Stevens &amp; Leonardo Ramirez-Lopez</em></p>
 
-<p>Visible and Near Infrared diffuse reflectance (vis--NIR) spectroscopy is a high--troughput, non--destructive and cheap sensing method that has a range of applications in agricultural, medical, food and environmental science. A number of R packages of interest for the spectroscopist is already available for processing and analysis of spectroscopic data (Table 1). The CRAN task views <a href="http://cran.r-project.org/web/views/Multivariate.html">Multivariate Statistics</a>, <a href="http://cran.r-project.org/web/views/MachineLearning.html">Machine Learning</a>, <a href="http://cran.r-project.org/web/views/ChemPhys.html">Chemometrics and Computational Physics</a>. The interested reader can also have a look at the special issue <a href="http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf">&quot;Spectroscopy and Chemometrics in R&quot;</a> of the Journal of Statistical Software (<span class="showtooltip" title="Mullen KM and Stokkum IHv (2007). 'An Introduction to the Special Volume Spectroscopy and Chemometrics in R.' Journal of Statistical Software, 18(1), pp. 1-5. ."><a href="http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf">Mullen &amp; Stokkum, 2007</a></span>).</p>
+<p>Visible and Near Infrared diffuse reflectance (vis-NIR) spectroscopy is a high-troughput, non-destructive and cheap sensing method that has a range of applications in agricultural, medical, food and environmental science. A number of R packages of interest for the spectroscopist is already available for processing and analysis of spectroscopic data (Table 1). The CRAN task views <a href="http://cran.r-project.org/web/views/Multivariate.html">Multivariate Statistics</a>, <a href="http://cran.r-project.org/web/views/MachineLearning.html">Machine Learning</a>, <a href="http://cran.r-project.org/web/views/ChemPhys.html">Chemometrics and Computational Physics</a>. The interested reader can also have a look at the special issue <a href="http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf">&quot;Spectroscopy and Chemometrics in R&quot;</a> of the Journal of Statistical Software (<span class="showtooltip" title="Mullen KM and Stokkum IHv (2007). 'An Introduction to the Special Volume Spectroscopy and Chemometrics in R.' Journal of Statistical Software, 18(1), pp. 1-5. ."><a href="http://ww.colin-baxter.com/academic/bib/downloads/mullen07.pdf">Mullen &amp; Stokkum, 2007</a></span>).</p>
 
 <table><thead>
 <tr>
@@ -1002,13 +1004,13 @@ img.mfp-img {
 </tr>
 </tbody></table>
 
-<p>Table 1: Non-exhaustive list of R package useful for vis--NIR spectroscopic analysis</p>
+<p>Table 1: Non-exhaustive list of R package useful for vis-NIR spectroscopic analysis</p>
 
-<p>The prospect package gathers algorithms commonly--used in spectroscopy for pre--treating spectra and select calibration samples. Some of the algorithms are already available in other package, like the Savitzky--Golay algorithm (<span class="showtooltip" title="Savitzky A and Golay MJE (1964). 'Smoothing and differentiation of data by simplified least squares procedures.' Anal. Chem., 36(8), pp. 1627-1639. ISSN 0003-2700."><a href="http://dx.doi.org/10.1021/ac60214a047">Savitzky &amp; Golay, 1964</a></span>) but our functions works indifferently on <code>vector</code>, <code>data.frame</code> or  <code>matrix</code> input and are optimized for speed using the <a href="http://cran.r-project.org/web/packages/Rcpp/index.html">Rcpp</a> and <a href="http://cran.r-project.org/web/packages/RcppArmadillo/index.html">RcppArmadillo</a> packages. </p>
+<p>The prospect package gathers algorithms commonly-used in spectroscopy for pre-treating spectra and select calibration samples. Some of the algorithms are already available in other package, like the Savitzky-Golay algorithm (<span class="showtooltip" title="Savitzky A and Golay MJE (1964). 'Smoothing and differentiation of data by simplified least squares procedures.' Anal. Chem., 36(8), pp. 1627-1639. ISSN 0003-2700."><a href="http://dx.doi.org/10.1021/ac60214a047">Savitzky &amp; Golay, 1964</a></span>) but our functions works indifferently on <code>vector</code>, <code>data.frame</code> or  <code>matrix</code> input and are optimized for speed using the <a href="http://cran.r-project.org/web/packages/Rcpp/index.html">Rcpp</a> and <a href="http://cran.r-project.org/web/packages/RcppArmadillo/index.html">RcppArmadillo</a> packages. </p>
 
 <h1>Signal Processing</h1>
 
-<p>The aim of signal pre--treatment is to improve data quality before modeling and remove physical information from the spectra. Applying a pre--treatment can increase the repeatability/reproducibility of the method, model robustness and accuracy, although there are no guarantees this will actually work...The pre--processing functions that are currently available in the package are listed in Table 2.</p>
+<p>The aim of signal pre-treatment is to improve data quality before modeling and remove physical information from the spectra. Applying a pre-treatment can increase the repeatability/reproducibility of the method, model robustness and accuracy, although there are no guarantees this will actually work...The pre-processing functions that are currently available in the package are listed in Table 2.</p>
 
 <table><thead>
 <tr>
@@ -1022,15 +1024,15 @@ img.mfp-img {
 </tr>
 <tr>
 <td><code>savitzkyGolay</code></td>
-<td>Savitzky--Golay smoothing and derivative</td>
+<td>Savitzky-Golay smoothing and derivative</td>
 </tr>
 <tr>
 <td><code>gapDer</code></td>
-<td>gap--segment derivative</td>
+<td>gap-segment derivative</td>
 </tr>
 <tr>
 <td><code>continuumRemoval</code></td>
-<td>compute continuum--removed values</td>
+<td>compute continuum-removed values</td>
 </tr>
 <tr>
 <td><code>detrend</code></td>
@@ -1062,9 +1064,9 @@ img.mfp-img {
 </tr>
 </tbody></table>
 
-<p>Table 2: List of pre--processing functions</p>
+<p>Table 2: List of pre-processing functions</p>
 
-<p>We show below how they can be used, using the NIRsoil dataset included in the package (<span class="showtooltip" title="Pierna JAF and Dardenne P (2008). 'Soil parameter quantification by NIRS as a Chemometric challenge at Chimiometrie 2006.' Chemometrics and Intelligent Laboratory Systems, 91(1), pp. 94-98. ."><a href="http://www.sciencedirect.com/science/article/pii/S0169743907001190">Pierna &amp; Dardenne, 2008</a></span>). Observations should be arranged row--wise.</p>
+<p>We show below how they can be used, using the NIRsoil dataset included in the package (<span class="showtooltip" title="Pierna JAF and Dardenne P (2008). 'Soil parameter quantification by NIRS as a Chemometric challenge at Chimiometrie 2006.' Chemometrics and Intelligent Laboratory Systems, 91(1), pp. 94-98. ."><a href="http://www.sciencedirect.com/science/article/pii/S0169743907001190">Pierna &amp; Dardenne, 2008</a></span>). Observations should be arranged row-wise.</p>
 
 <pre><code class="r">library(prospectr)
 data(NIRsoil)
@@ -1091,7 +1093,7 @@ str(NIRsoil)
 
 <h3>Moving average or runnnig mean</h3>
 
-<p>A moving average filter is a column--wise operation which average contiguous wavelengths within a given window size. </p>
+<p>A moving average filter is a column-wise operation which average contiguous wavelengths within a given window size. </p>
 
 <pre><code class="r">noisy &lt;- NIRsoil$spc + rnorm(length(NIRsoil$spc), 0, 0.001)  # adding some noise
 # Plot the first spectrum
@@ -1129,7 +1131,7 @@ legend(&quot;topleft&quot;, legend = c(&quot;bin.size = 10&quot;, &quot;bins = 5
 
 <p>\[ x_j\ast = \frac{1}{N}\sum_{h=-k}^{k}{c_hx_{j+h}}\]</p>
 
-<p>where \(x_j\ast\) is the new value, \(N\) is a normalizing coefficient, \(k\) is the number of neighbour values at each side of \(j\) and \(c_h\) are pre--computed coefficients, that depends on the chosen polynomial order and degree (smoothing, first and second derivative).</p>
+<p>where \(x_j\ast\) is the new value, \(N\) is a normalizing coefficient, \(k\) is the number of neighbour values at each side of \(j\) and \(c_h\) are pre-computed coefficients, that depends on the chosen polynomial order and degree (smoothing, first and second derivative).</p>
 
 <pre><code class="r"># p = polynomial order w = window size (must be odd) m = m-th derivative (0
 # = smoothing) The function accepts vectors, data.frames or matrices.  For a
@@ -1236,18 +1238,18 @@ legend(&quot;topleft&quot;, legend = c(&quot;1st der&quot;, &quot;gap-segment 1s
 
 <h3>Standard Normal Variate (SNV)</h3>
 
-<p><em>Standard Normal Variate</em> (SNV) is another simple way for normalizing spectra that intends to correct for light <em>scatter</em>. It operates row--wise:</p>
+<p><em>Standard Normal Variate</em> (SNV) is another simple way for normalizing spectra that intends to correct for light <em>scatter</em>. It operates row-wise:</p>
 
 <p>\[ SNV_i = \frac{x_i - \bar{x_i}}{s_i}\]</p>
 
 <pre><code class="r">snv &lt;- standardNormalVariate(X = NIRsoil$spc)
 </code></pre>
 
-<p>According to Fearn (<span class="showtooltip" title="Fearn T (2008). 'The interaction between standard normal variate and derivatives.' NIR news, 19(7), pp. 16. ISSN 0960-3360."><a href="http://dx.doi.org/10.1255/nirn.1098">Fearn, 2008</a></span>), it is better to perform SNV transformation after filtering (by e.g. Savitzky--Golay) than the reverse</p>
+<p>According to Fearn (<span class="showtooltip" title="Fearn T (2008). 'The interaction between standard normal variate and derivatives.' NIR news, 19(7), pp. 16. ISSN 0960-3360."><a href="http://dx.doi.org/10.1255/nirn.1098">Fearn, 2008</a></span>), it is better to perform SNV transformation after filtering (by e.g. Savitzky-Golay) than the reverse</p>
 
 <h3>SNV-Detrend</h3>
 
-<p>The <em>SNV-Detrend</em> (<span class="showtooltip" title="Barnes R, Dhanoa M and Lister S (1989). 'Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra.' Applied spectroscopy, 43(5), pp. 772-777."><a href="">Barnes et al. 1989</a></span>) further accounts for wavelength-dependent scattering effects (variation in curvilinearity between the spectra). After a <em>SNV</em> transformation, a 2\(^{nd}\)--order polynomial is fit to the spectrum and subtracted from it.</p>
+<p>The <em>SNV-Detrend</em> (<span class="showtooltip" title="Barnes R, Dhanoa M and Lister S (1989). 'Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra.' Applied spectroscopy, 43(5), pp. 772-777."><a href="">Barnes et al. 1989</a></span>) further accounts for wavelength-dependent scattering effects (variation in curvilinearity between the spectra). After a <em>SNV</em> transformation, a 2\(^{nd}\)-order polynomial is fit to the spectrum and subtracted from it.</p>
 
 <pre><code class="r"># X = input spectral matrix wav = band centers
 dt &lt;- detrend(X = NIRsoil$spc, wav = as.numeric(colnames(NIRsoil$spc)))
@@ -1284,7 +1286,7 @@ sum(apply(bs, 2, var))  # this works!
 <pre><code>## [1] 1
 </code></pre>
 
-<p>The problem with <em>block scaling</em> is that it down--scale all the block variables to the same variance. Since sometimes this is not advised, one can alternatively use <em>sum of squares block weighting</em> . The spectral matrix is multiplied by a factor to achieve a pre--determined sum of square: </p>
+<p>The problem with <em>block scaling</em> is that it down-scale all the block variables to the same variance. Since sometimes this is not advised, one can alternatively use <em>sum of squares block weighting</em> . The spectral matrix is multiplied by a factor to achieve a pre-determined sum of square: </p>
 
 <pre><code class="r"># X = spectral matrix targetnorm = desired norm for X
 bn &lt;- blockNorm(X = NIRsoil$spc, targetnorm = 1)$Xscaled
@@ -1344,7 +1346,7 @@ matlines(as.numeric(colnames(NIRsoil$spc)), t(cr[1:10, ]))
 <li><p>Repeat the step 2 n-3 times in order to select the remaining samples (\({x_{tr}}_4,..., {x_{tr}}_n\)).   </p></li>
 </ol>
 
-<p>The Kennard--Stone algorithm allows to create a calibration set that has a flat distribution over the spectral space. The metric used to compute the distance between points can be either the Euclidean distance or the Mahalanobis distance. 
+<p>The Kennard-Stone algorithm allows to create a calibration set that has a flat distribution over the spectral space. The metric used to compute the distance between points can be either the Euclidean distance or the Mahalanobis distance. 
 Let&#39;s see some examples...</p>
 
 <pre><code class="r"># Create a dataset for illustrating how the calibration sampling 
@@ -1373,7 +1375,7 @@ points(ken_mahal$pc[ken_mahal$model,1],ken_mahal$pc[ken_mahal$model,2],pch=19,co
 
 <h3>DUPLEX (<code>duplex</code>)</h3>
 
-<p>The Kennard--Stone algorithm selects <em>calibration</em> samples. Often, we need also to select a <em>validation</em> subset. The DUPLEX algorithm (<span class="showtooltip" title="Snee RD (1977). 'Validation of regression models: methods and examples.' Technometrics, 19(4), pp. 415-428. ."><a href="http://amstat.tandfonline.com/doi/abs/10.1080/00401706.1977.10489581">Snee, 1977</a></span>) is a modification of the Kennard-Stone which allows to select a <em>validation</em> set that have similar properties to the <em>calibration_set. DUPLEX, similarly to Kennard--Stone, begins by selecting pairs of points that are the farthest apart from each other, and then assigns points alternatively to the _calibration</em> and <em>validation</em> sets.</p>
+<p>The Kennard-Stone algorithm selects <em>calibration</em> samples. Often, we need also to select a <em>validation</em> subset. The DUPLEX algorithm (<span class="showtooltip" title="Snee RD (1977). 'Validation of regression models: methods and examples.' Technometrics, 19(4), pp. 415-428. ."><a href="http://amstat.tandfonline.com/doi/abs/10.1080/00401706.1977.10489581">Snee, 1977</a></span>) is a modification of the Kennard-Stone which allows to select a <em>validation</em> set that have similar properties to the <em>calibration_set. DUPLEX, similarly to Kennard-Stone, begins by selecting pairs of points that are the farthest apart from each other, and then assigns points alternatively to the _calibration</em> and <em>validation</em> sets.</p>
 
 <pre><code class="r">dup &lt;- duplex(X = X, k = 15)  # k is the number of selected samples
 plot(X)
