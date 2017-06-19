@@ -198,12 +198,13 @@ readASD <- function(fnames, in_format = c("binary", "txt"), out_format = c("matr
                 normalizedData[wavelength > Join2Wavelength] <- data[wavelength > Join2Wavelength] * SWIR2Gain/2048
             }
             # Read the reference spectrum.
-            referenceFlag <- readBin(con, "integer", n = 2, size = 1)
+            referenceFlag <- readBin(con, "logical", size = 2)
             # The 'Indico Version 8 File Format' documents the reference and spectrum times as well as the spectrum description.
             # However it is not clear what these data are, or how they are formatted. They are not used here.
             referenceTime <- readBin(con, "integer", n = 8, size = 1)
             spectrumTime <- readBin(con, "integer", n = 8, size = 1)
             descriptionLength <- readBin(con, "integer", size = 2)
+            spectrumDescription <- readChar(con, nchars = descriptionLength)
             
             if (as.numeric(FileVersion) < 6) 
                 referenceData <- readBin(con, dataFormat, n = numberOfChannels, size = 4) 
