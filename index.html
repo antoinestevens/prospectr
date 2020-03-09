@@ -1316,7 +1316,7 @@ sum(bn^2)  # this works!
 <p>The continuum removal technique was introduced by (<span class="showtooltip" title="Clark RN and Roush TL (1984). 'Reflectance Spectroscopy: Quantitative Analysis Techniques for Remote Sensing Applications.' Journal of Geophysical Research, 89(B7), pp. PP. 6329-6340. ."><a href="http://dx.doi.org/198410.1029/JB089iB07p06329">Clark &amp; Roush, 1984</a></span>) as an effective method to highlight absorption features of minerals. It can be viewed as an albedo normalization technique. This technique is based on the computation of the continuum (or envelope) of a given spectrum. The continuum-removed spectrum of a given spectrum is computed as follows:</p>
 
 <ol>
-<li><p>The local reflectance spectrum maxima points (in the case of absorbance, local minima points) are identified.   </p></li>
+<li><p>The convex hull points are identified.   </p></li>
 <li><p>Then, these points are connected by linear interpolation to form the continuum. </p></li>
 <li><p>The continuum-removed spectrum is given by \(\phi_{i} = \frac{x_{i}}{c_{i}};  i=\left \{ 1,..., p\right\}\), where \(x_{i}\) and \(c_{i}\) are the original and the continuum reflectance (or absorbance) values respectively at the \(i\)<sup>th</sup> wavelength of a set of \(p\) wavelengths, and \(\phi_{i}\) is the final reflectance (or absorbance) value after continuum removal.</p></li>
 </ol>
